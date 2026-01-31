@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb1g4r6lspbsm"]
+
+[ext_resource type="Texture2D" uid="uid://cpn7r7jswjoj8" path="res://Sprites/struct_pip.png" id="1_5rttn"]
+[ext_resource type="Texture2D" uid="uid://ckp7m2na0n5m5" path="res://Sprites/damage_pip.png" id="2_wctk3"]
+[ext_resource type="Script" uid="uid://6hdsyrpnf618" path="res://Pip.gd" id="3_wctk3"]
+
+[node name="StructurePip" type="TextureButton"]
+size_flags_horizontal = 0
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("1_5rttn")
+texture_pressed = ExtResource("2_wctk3")
+stretch_mode = 0
+script = ExtResource("3_wctk3")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

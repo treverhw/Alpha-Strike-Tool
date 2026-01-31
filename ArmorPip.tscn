@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dljmcp2cwcfhl"]
+
+[ext_resource type="Texture2D" uid="uid://c4xv21av5ihmu" path="res://Sprites/armor_pip.png" id="1_ejgcy"]
+[ext_resource type="Texture2D" uid="uid://ckp7m2na0n5m5" path="res://Sprites/damage_pip.png" id="2_nld8j"]
+[ext_resource type="Script" uid="uid://6hdsyrpnf618" path="res://Pip.gd" id="3_nld8j"]
+
+[node name="ArmorPip" type="TextureButton"]
+size_flags_horizontal = 0
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("1_ejgcy")
+texture_pressed = ExtResource("2_nld8j")
+stretch_mode = 0
+script = ExtResource("3_nld8j")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

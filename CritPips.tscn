@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://brcchflca8cel"]
+
+[ext_resource type="Texture2D" uid="uid://c4xv21av5ihmu" path="res://Sprites/armor_pip.png" id="1_wsrii"]
+[ext_resource type="Texture2D" uid="uid://ckp7m2na0n5m5" path="res://Sprites/damage_pip.png" id="2_83yvc"]
+
+[node name="CritPip" type="TextureButton"]
+size_flags_horizontal = 0
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("1_wsrii")
+texture_pressed = ExtResource("2_83yvc")
+stretch_mode = 0
