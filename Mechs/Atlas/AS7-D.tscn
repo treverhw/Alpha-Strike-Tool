@@ -59,23 +59,26 @@ animations = [{
 [node name="AS7-D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 1050.0
+offset_bottom = 750.0
+scale = Vector2(0.66, 0.66)
 script = ExtResource("1_yocyi")
 stats = ExtResource("2_cxxhd")
 metadata/_custom_type_script = "uid://ckrs8cwf2baj3"
 
 [node name="Card" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(526, 370)
+position = Vector2(525, 375)
 texture = ExtResource("3_iw70s")
 
 [node name="UnitImgContainer" type="HBoxContainer" parent="."]
 z_index = 2
 custom_minimum_size = Vector2(312, 333)
 layout_mode = 0
-offset_left = 660.0
-offset_top = 99.0
-offset_right = 972.0
-offset_bottom = 432.0
+offset_left = 659.0
+offset_top = 104.0
+offset_right = 971.0
+offset_bottom = 437.0
 alignment = 1
 
 [node name="Unit" type="TextureRect" parent="UnitImgContainer"]
@@ -87,38 +90,34 @@ stretch_mode = 5
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(823, 283)
+position = Vector2(822, 288)
 texture = ExtResource("5_j02ow")
 
 [node name="Armor" type="HFlowContainer" parent="."]
 z_index = 3
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 77.0
-offset_top = 454.00003
-offset_right = 1693.6666
-offset_bottom = 547.33325
-grow_vertical = 2
-scale = Vector2(0.3, 0.3)
+layout_mode = 0
+offset_left = 75.0
+offset_top = 453.03
+offset_right = 1253.0302
+offset_bottom = 528.7876
+scale = Vector2(0.4, 0.4)
 
 [node name="Structure" type="HFlowContainer" parent="."]
 z_index = 3
 layout_mode = 0
-offset_left = 77.0
-offset_top = 487.00003
-offset_right = 1663.6666
-offset_bottom = 580.33325
-scale = Vector2(0.3, 0.3)
+offset_left = 75.0
+offset_top = 486.364
+offset_right = 1245.4543
+offset_bottom = 558.33386
+scale = Vector2(0.4, 0.4)
 
 [node name="Crits" type="VBoxContainer" parent="."]
 z_index = 3
 layout_mode = 0
-offset_left = 731.0
-offset_top = 496.00003
-offset_right = 1047.6667
-offset_bottom = 824.0
+offset_left = 730.0
+offset_top = 501.00003
+offset_right = 1046.6667
+offset_bottom = 841.0
 scale = Vector2(0.3, 0.3)
 theme_override_constants/separation = 28
 
@@ -176,8 +175,10 @@ layout_mode = 2
 [node name="Labels" type="Control" parent="."]
 z_index = 2
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 39.0
+offset_bottom = 45.0
 
 [node name="CALLSIGN" type="Label" parent="Labels"]
 layout_mode = 0
@@ -359,7 +360,7 @@ text = "special"
 
 [node name="HeatScale" type="AnimatedSprite2D" parent="."]
 z_index = 1
-position = Vector2(509, 394)
+position = Vector2(508, 399)
 sprite_frames = SubResource("SpriteFrames_kabr8")
 script = ExtResource("12_jcppl")
 

@@ -29,12 +29,15 @@ func _ready():
 
 func createPips():
 	
-	for x in range(stats.armor):
-		get_node("Armor").add_child(armor.instantiate())
-	for x in range(stats.struct):
-		get_node("Structure").add_child(structure.instantiate())
+	var armorNode	= get_node("Armor")
+	var structNode	= get_node("Structure")
 	
-	if get_node("Armor").get_children().size() > 23:
-		get_node("Armor").global_position.y += 2
-	if get_node("Structure").get_children().size() > 23:
-		get_node("Structure").global_position.y -= 10
+	for x in range(stats.armor):
+		armorNode.add_child(armor.instantiate())
+	for x in range(stats.struct):
+		structNode.add_child(structure.instantiate())
+	
+	if armorNode.get_children().size() > 23:
+		armorNode.global_position.y += 2
+	if structNode.get_children().size() > 23:
+		structNode.global_position.y -= 10
