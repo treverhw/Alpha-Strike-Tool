@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://./Sprites/Units\shogun-rg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+callsign = "C"
+title = "SHOGUN"
+pv = 58
+type = "BM"
+sz = 4
+tmm = 1
+move = 6j
+role = "Missile Boat"
+skill = 4
+damageS = 7
+damageM = 7
+damageL = 5
+ov = 2
+armor = 8
+struct = 7
+special = Array[String](["CASE", "IF2"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

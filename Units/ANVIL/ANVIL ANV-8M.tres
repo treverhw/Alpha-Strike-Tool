@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units\anvil-3055u.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+callsign = "ANV-8M"
+title = "ANVIL"
+pv = 44
+type = "BM"
+sz = 3
+tmm = 2
+move = 10
+role = "Missile Boat"
+skill = 4
+damageS = 2
+damageM = 2
+damageL = 1
+ov = 0
+armor = 5
+struct = 5
+special = Array[String](["ARTAIS-1", "CASE", "ECM"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

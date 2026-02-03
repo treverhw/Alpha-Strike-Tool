@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://./Units/Images\shadow-hawk-rg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+callsign = "SHD-2D"
+title = "SHADOW HAWK"
+pv = 26
+type = "BM"
+sz = 2
+tmm = 2
+move = 10/6j
+role = "Striker"
+skill = 4
+damageS = 2
+damageM = 3
+damageL = 1
+ov = 0
+armor = 2
+struct = 5
+special = Array[String](["IF0*", "JMPW1"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

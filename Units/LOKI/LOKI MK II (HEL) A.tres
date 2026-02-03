@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://./Sprites/Units\loki-mk-ii-hel-rg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+callsign = "A"
+title = "LOKI MK II (HEL)"
+pv = 44
+type = "BM"
+sz = 3
+tmm = 1
+move = 8
+role = "Brawler"
+skill = 4
+damageS = 5
+damageM = 5
+damageL = 4
+ov = 3
+armor = 6
+struct = 4
+special = Array[String](["AECM", "CASE", "FLK0*/0*/1", "OMNI"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"
