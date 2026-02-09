@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
-[ext_resource type="Texture2D" path="res://Sprites/Units\celerity-3145.png" id="2_ynkeb"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/celerity-3145.png" id="2_ynkeb"]
 
 [resource]
 script = ExtResource("1_cs3jr")

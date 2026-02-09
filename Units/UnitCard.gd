@@ -4,33 +4,35 @@ class_name UnitCard
 @export var stats: UnitInfo
 const armor = preload("res://ArmorPip.tscn")
 const structure = preload("res://StructurePip.tscn")
+	
+const dir = "ScaleControl/"
 
 func _ready():
 	
-	get_node("UnitImgContainer/Unit").texture = stats.unitIMG
+	get_node(dir + "UnitImgContainer/Unit").texture = stats.unitIMG
 	
-	get_node("Labels/CALLSIGN").text = stats.callsign
-	get_node("Labels/TITLE").text = stats.title
-	get_node("Labels/PV").text = "PV: " + str(stats.pv)
+	get_node(dir + "Labels/CALLSIGN").text = stats.callsign
+	get_node(dir + "Labels/TITLE").text = stats.title
+	get_node(dir + "Labels/PV").text = "PV: " + str(stats.pv)
 	
-	get_node("Labels/TP").text = stats.type
-	get_node("Labels/SZ").text = str(stats.sz)
-	get_node("Labels/TMM").text = str(stats.tmm)
-	get_node("Labels/MV").text = str(stats.move)
-	get_node("Labels/ROLE").text = stats.role
-	get_node("Labels/SKILL").text = str(stats.skill)
-	get_node("Labels/SHORT").text = str(stats.damageS)
-	get_node("Labels/MEDIUM").text = str(stats.damageM)
-	get_node("Labels/LONG").text = str(stats.damageL)
-	get_node("Labels/OV").text = str(stats.damageL)
-	get_node("Labels/SPECIAL").text = stats.printSpecial()
+	get_node(dir + "Labels/TP").text = stats.type
+	get_node(dir + "Labels/SZ").text = str(stats.sz)
+	get_node(dir + "Labels/TMM").text = str(stats.tmm)
+	get_node(dir + "Labels/MV").text = str(stats.move)
+	get_node(dir + "Labels/ROLE").text = stats.role
+	get_node(dir + "Labels/SKILL").text = str(stats.skill)
+	get_node(dir + "Labels/SHORT").text = str(stats.damageS)
+	get_node(dir + "Labels/MEDIUM").text = str(stats.damageM)
+	get_node(dir + "Labels/LONG").text = str(stats.damageL)
+	get_node(dir + "Labels/OV").text = str(stats.damageL)
+	get_node(dir + "Labels/SPECIAL").text = stats.printSpecial()
 	
 	createPips()
 
 func createPips():
 	
-	var armorNode	= get_node("Armor")
-	var structNode	= get_node("Structure")
+	var armorNode	= get_node(dir + "Armor")
+	var structNode	= get_node(dir + "Structure")
 	
 	for x in range(stats.armor):
 		armorNode.add_child(armor.instantiate())

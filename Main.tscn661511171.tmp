@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmjeerdhmfjvk"]
+
+[ext_resource type="Script" uid="uid://b311gxwakompb" path="res://Main.gd" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://dupw7bm6c73ix" path="res://Sprites/ASUnitCard_Backdrop.png" id="3_fos0i"]
+[ext_resource type="FontFile" uid="uid://dr1ehbyf7j7h" path="res://Fonts/Orbitron/static/Orbitron-Black.ttf" id="4_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://uxq3fqb3lhe5" path="res://Units/FLEA/FLEA FLE-17.tscn" id="4_lgr22"]
+[ext_resource type="Script" uid="uid://dx5yv1djxqfym" path="res://unitListButton.gd" id="5_fos0i"]
+[ext_resource type="PackedScene" uid="uid://uxq3fqb3lhe5" path="res://Units/COSSACK/COSSACK C-1FC.tscn" id="5_trn2v"]
+[ext_resource type="PackedScene" uid="uid://uxq3fqb3lhe5" path="res://Units/CELERITY/CELERITY CLR-03-O.tscn" id="6_lgr22"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glv2v")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("3_fos0i")
+
+[node name="MainContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1900, 1000)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 1911.0
+offset_bottom = 1060.0
+theme_override_constants/separation = 4
+
+[node name="MenuContainer" type="VBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(100, 1040)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Roster" type="Button" parent="MainContainer/MenuContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_3dxm6")
+theme_override_font_sizes/font_size = 24
+text = "Roster"
+
+[node name="Search" type="Button" parent="MainContainer/MenuContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_3dxm6")
+theme_override_font_sizes/font_size = 24
+text = "Search"
+
+[node name="Options" type="Button" parent="MainContainer/MenuContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_3dxm6")
+theme_override_font_sizes/font_size = 24
+text = "Options"
+
+[node name="Quit" type="Button" parent="MainContainer/MenuContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_3dxm6")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[node name="UnitCardContainer" type="AspectRatioContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+ratio = 1.4
+
+[node name="FLE-17" parent="MainContainer/UnitCardContainer" instance=ExtResource("4_lgr22")]
+layout_mode = 2
+
+[node name="C-1FC" parent="MainContainer/UnitCardContainer" instance=ExtResource("5_trn2v")]
+layout_mode = 2
+
+[node name="CLR-03-O" parent="MainContainer/UnitCardContainer" instance=ExtResource("6_lgr22")]
+layout_mode = 2
+
+[node name="UnitListContainer" type="VBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="unit" type="Button" parent="MainContainer/UnitListContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_3dxm6")
+theme_override_font_sizes/font_size = 24
+text = "Unit"
+script = ExtResource("5_fos0i")
+
+[connection signal="button_down" from="MainContainer/MenuContainer/Quit" to="." method="_on_quit_button_down"]

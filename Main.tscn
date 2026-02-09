@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmjeerdhmfjvk"]
+[gd_scene load_steps=9 format=3 uid="uid://dmjeerdhmfjvk"]
 
 [ext_resource type="Script" uid="uid://b311gxwakompb" path="res://Main.gd" id="1_glv2v"]
-[ext_resource type="PackedScene" path="res://Mechs/HUNCHBACK/HUNCHBACK (ANASTASIA) HBK-LGN-Pin.tscn" id="2_uu6xs"]
+[ext_resource type="Texture2D" uid="uid://dupw7bm6c73ix" path="res://Sprites/ASUnitCard_Backdrop.png" id="3_fos0i"]
+[ext_resource type="FontFile" uid="uid://dr1ehbyf7j7h" path="res://Fonts/Orbitron/static/Orbitron-Black.ttf" id="4_3dxm6"]
+[ext_resource type="PackedScene" path="res://Units/HORNET/HORNET HNT-181.tscn" id="4_lgr22"]
+[ext_resource type="Script" uid="uid://dx5yv1djxqfym" path="res://unitListButton.gd" id="5_fos0i"]
+[ext_resource type="PackedScene" path="res://Units/PREY/PREY SEEKER PY-SR30.tscn" id="5_trn2v"]
+[ext_resource type="PackedScene" path="res://Units/STINGER/STINGER STG-7S.tscn" id="6_trn2v"]
+[ext_resource type="PackedScene" path="res://Units/WASP/WASP WSP-3W.tscn" id="7_03owx"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -12,10 +18,96 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_glv2v")
 
-[node name="UnitCards" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HBK-LGN-Pin" parent="UnitCards" instance=ExtResource("2_uu6xs")]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("3_fos0i")
+
+[node name="MainContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1900, 1000)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 1911.0
+offset_bottom = 1060.0
+theme_override_constants/separation = 4
+
+[node name="MenuContainer" type="VBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(100, 1040)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Roster" type="Button" parent="MainContainer/MenuContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_3dxm6")
+theme_override_font_sizes/font_size = 24
+text = "Roster"
+
+[node name="Search" type="Button" parent="MainContainer/MenuContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_3dxm6")
+theme_override_font_sizes/font_size = 24
+text = "Search"
+
+[node name="Options" type="Button" parent="MainContainer/MenuContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_3dxm6")
+theme_override_font_sizes/font_size = 24
+text = "Options"
+
+[node name="Quit" type="Button" parent="MainContainer/MenuContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_3dxm6")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[node name="UnitCardContainer" type="AspectRatioContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+ratio = 1.4
+
+[node name="HNT-181" parent="MainContainer/UnitCardContainer" instance=ExtResource("4_lgr22")]
+visible = false
+layout_mode = 2
+
+[node name="PY-SR30" parent="MainContainer/UnitCardContainer" instance=ExtResource("5_trn2v")]
+visible = false
+layout_mode = 2
+
+[node name="STG-7S" parent="MainContainer/UnitCardContainer" instance=ExtResource("6_trn2v")]
+visible = false
+layout_mode = 2
+
+[node name="WSP-3W" parent="MainContainer/UnitCardContainer" instance=ExtResource("7_03owx")]
+visible = false
+layout_mode = 2
+
+[node name="UnitListContainer" type="VBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="unit" type="Button" parent="MainContainer/UnitListContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_3dxm6")
+theme_override_font_sizes/font_size = 24
+text = "Unit"
+script = ExtResource("5_fos0i")
+
+[connection signal="button_down" from="MainContainer/MenuContainer/Quit" to="." method="_on_quit_button_down"]
