@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/dasher-fire-moth-rg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+callsign = "B"
+title = "DASHER (FIRE MOTH)"
+pv = 24
+type = "BM"
+sz = 1
+tmm = 4
+move = 26
+role = "Striker"
+skill = 4
+damageS = 2
+damageM = 2
+damageL = 0
+ov = 0
+armor = 1
+struct = 1
+special = Array[String](["CASE", "ECM", "OMNI"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

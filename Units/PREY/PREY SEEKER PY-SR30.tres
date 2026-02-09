@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3 uid="uid://b6tmdm0kpcxx4"]
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
 
-[ext_resource type="Script" uid="uid://dj1da82xsjhtw" path="res://UnitInfo.gd" id="1_cs3jr"]
-[ext_resource type="Texture2D" uid="uid://btc01h6dun0xs" path="res://Sprites/Units/prey-seeker-3150.png" id="2_ynkeb"]
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/prey-seeker-3150.png" id="2_ynkeb"]
 
 [resource]
 script = ExtResource("1_cs3jr")
@@ -16,6 +16,9 @@ move = 24
 role = "Scout"
 skill = 4
 damageS = 1
+damageM = 0
+damageL = 0
+ov = 0
 armor = 2
 struct = 1
 special = Array[String]([""])

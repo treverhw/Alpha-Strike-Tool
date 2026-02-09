@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/morrigan-3085.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+callsign = "Morrigan"
+title = ""
+pv = 40
+type = "BM"
+sz = 1
+tmm = 3
+move = 16
+role = "Striker"
+skill = 4
+damageS = 4
+damageM = 3
+damageL = 1
+ov = 0
+armor = 4
+struct = 2
+special = Array[String](["CASE", "PRB", "RCN"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

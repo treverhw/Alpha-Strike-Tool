@@ -610,7 +610,7 @@ def main():
 
                     #create the tres
                     for unit in unitList:
-                        time.sleep(.5)
+                        time.sleep(.1)
                         if unit["BFPointValue"] != 0:
                             print(f"Processing: {unit['Name']} | {unit['Type']['Name']} | {unit['Technology']['Name']} era {unit['EraId']} from {unit['DateIntroduced']}")
                             

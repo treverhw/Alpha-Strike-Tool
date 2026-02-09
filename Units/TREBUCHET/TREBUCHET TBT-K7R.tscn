@@ -1,0 +1,426 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://ckrs8cwf2baj3" path="res://Units/UnitCard.gd" id="1_8e0a1"]
+[ext_resource type="Resource" path="res://Units/TREBUCHET/TREBUCHET TBT-K7R.tres" id="2_wavwk"]
+[ext_resource type="Texture2D" uid="uid://bqjudwhrflhyt" path="res://Sprites/ASUnitCard.png" id="3_tqojt"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/trebuchet-xtr.png" id="4_kvswk"]
+[ext_resource type="Texture2D" uid="uid://dupw7bm6c73ix" path="res://Sprites/ASUnitCard_Backdrop.png" id="5_whmh8"]
+[ext_resource type="PackedScene" uid="uid://brcchflca8cel" path="res://CritPips.tscn" id="6_ctsk4"]
+[ext_resource type="PackedScene" uid="uid://dljmcp2cwcfhl" path="res://ArmorPip.tscn" id="7_tg1ke"]
+[ext_resource type="FontFile" uid="uid://b1vnm5eojsjn" path="res://Fonts/Orbitron/static/Orbitron-Regular.ttf" id="8_67y70"]
+[ext_resource type="FontFile" uid="uid://dr1ehbyf7j7h" path="res://Fonts/Orbitron/static/Orbitron-Black.ttf" id="9_boxg6"]
+[ext_resource type="FontFile" uid="uid://crhnk2w1fvpo" path="res://Fonts/Roboto_Condensed/static/RobotoCondensed-ExtraBold.ttf" id="10_d8mch"]
+[ext_resource type="Texture2D" uid="uid://ev6hk5g21b0r" path="res://Sprites/heat_scale.png" id="11_0amtm"]
+[ext_resource type="Script" uid="uid://b1ajh0ju0k2hb" path="res://HeatScale.gd" id="12_bgya8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m710d"]
+atlas = ExtResource("11_0amtm")
+region = Rect2(0, 0, 222, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cf8h"]
+atlas = ExtResource("11_0amtm")
+region = Rect2(222, 0, 222, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tsts"]
+atlas = ExtResource("11_0amtm")
+region = Rect2(444, 0, 222, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6t4s"]
+atlas = ExtResource("11_0amtm")
+region = Rect2(666, 0, 222, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur6nf"]
+atlas = ExtResource("11_0amtm")
+region = Rect2(888, 0, 222, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kabr8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m710d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cf8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tsts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6t4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur6nf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+
+[node name="TBT-K7R" type="Control"]
+custom_minimum_size = Vector2(1050, 750)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_8e0a1")
+stats = ExtResource("2_wavwk")
+metadata/_custom_type_script = "uid://ckrs8cwf2baj3"
+
+[node name="ScaleControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(525, 375)
+
+[node name="Card" type="TextureRect" parent="ScaleControl"]
+z_index = 1
+layout_mode = 0
+texture = ExtResource("3_tqojt")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="UnitImgContainer" type="HBoxContainer" parent="ScaleControl"]
+z_index = 2
+custom_minimum_size = Vector2(312, 333)
+layout_mode = 0
+offset_left = 134.0
+offset_top = -271.0
+offset_right = 446.0
+offset_bottom = 62.0
+alignment = 1
+
+[node name="Unit" type="TextureRect" parent="ScaleControl/UnitImgContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_kvswk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Background" type="TextureRect" parent="ScaleControl"]
+z_index = -1
+layout_mode = 0
+offset_left = 94.0
+offset_top = -346.0
+offset_right = 498.0
+offset_bottom = 94.0
+texture = ExtResource("5_whmh8")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Armor" type="HFlowContainer" parent="ScaleControl"]
+z_index = 3
+layout_mode = 0
+offset_left = -450.0
+offset_top = 78.03
+offset_right = 728.03015
+offset_bottom = 153.7876
+scale = Vector2(0.4, 0.4)
+
+[node name="Structure" type="HFlowContainer" parent="ScaleControl"]
+z_index = 3
+layout_mode = 0
+offset_left = -450.0
+offset_top = 111.36401
+offset_right = 720.45435
+offset_bottom = 183.33386
+scale = Vector2(0.4, 0.4)
+
+[node name="Crits" type="VBoxContainer" parent="ScaleControl"]
+z_index = 3
+layout_mode = 0
+offset_left = 205.0
+offset_top = 126.00003
+offset_right = 521.66675
+offset_bottom = 466.00003
+scale = Vector2(0.3, 0.3)
+theme_override_constants/separation = 28
+
+[node name="CritPip" parent="ScaleControl/Crits" instance=ExtResource("6_ctsk4")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScaleControl/Crits"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ArmorPip" parent="ScaleControl/Crits/HBoxContainer" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="ArmorPip2" parent="ScaleControl/Crits/HBoxContainer" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="ArmorPip3" parent="ScaleControl/Crits/HBoxContainer" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="ArmorPip4" parent="ScaleControl/Crits/HBoxContainer" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScaleControl/Crits"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ArmorPip2" parent="ScaleControl/Crits/HBoxContainer2" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="ArmorPip3" parent="ScaleControl/Crits/HBoxContainer2" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="ArmorPip4" parent="ScaleControl/Crits/HBoxContainer2" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="ArmorPip5" parent="ScaleControl/Crits/HBoxContainer2" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ScaleControl/Crits"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ArmorPip2" parent="ScaleControl/Crits/HBoxContainer3" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="ArmorPip3" parent="ScaleControl/Crits/HBoxContainer3" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="ArmorPip4" parent="ScaleControl/Crits/HBoxContainer3" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="ArmorPip5" parent="ScaleControl/Crits/HBoxContainer3" instance=ExtResource("7_tg1ke")]
+layout_mode = 2
+
+[node name="Labels" type="Control" parent="ScaleControl"]
+z_index = 2
+anchors_preset = 0
+offset_left = -526.0
+offset_top = -370.0
+offset_right = -486.0
+offset_bottom = -330.0
+
+[node name="CALLSIGN" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 32.0
+offset_right = 259.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_67y70")
+theme_override_font_sizes/font_size = 48
+text = "callsign"
+
+[node name="TITLE" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 82.0
+offset_right = 195.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_boxg6")
+theme_override_font_sizes/font_size = 64
+text = "title"
+
+[node name="PV" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 862.0
+offset_top = 22.0
+offset_right = 989.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 44
+text = "PV: 000"
+
+[node name="TP" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 98.015
+offset_top = 162.0
+offset_right = 138.01515
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 40
+text = "tp"
+
+[node name="SZ" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 162.0
+offset_right = 273.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 40
+text = "sz"
+
+[node name="TMM" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 162.0
+offset_right = 442.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 40
+text = "tmm"
+
+[node name="MV" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 162.0
+offset_right = 552.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 40
+text = "mv"
+
+[node name="ROLE" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 200.0
+offset_right = 192.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 40
+text = "role"
+
+[node name="SKILL" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 200.0
+offset_right = 573.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 40
+text = "skill"
+
+[node name="SHORT" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 91.0
+offset_top = 286.0
+offset_right = 176.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 40
+text = "short"
+horizontal_alignment = 1
+
+[node name="MEDIUM" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 255.0
+offset_top = 286.0
+offset_right = 383.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 40
+text = "medium"
+horizontal_alignment = 1
+
+[node name="LONG" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 480.0
+offset_top = 286.0
+offset_right = 550.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 40
+text = "long"
+horizontal_alignment = 1
+
+[node name="OV" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 369.0
+offset_right = 143.0
+offset_bottom = 417.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_d8mch")
+theme_override_font_sizes/font_size = 40
+text = "ov"
+
+[node name="SPECIAL" type="Label" parent="ScaleControl/Labels"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 544.0
+offset_right = 123.0
+offset_bottom = 568.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_67y70")
+theme_override_font_sizes/font_size = 18
+text = "special"
+
+[node name="HeatScale" type="AnimatedSprite2D" parent="ScaleControl"]
+z_index = 1
+position = Vector2(-17, 24)
+sprite_frames = SubResource("SpriteFrames_kabr8")
+script = ExtResource("12_bgya8")
+
+[node name="first" type="Button" parent="ScaleControl/HeatScale"]
+z_index = -1
+offset_left = -106.0
+offset_top = -21.0
+offset_right = -50.0
+offset_bottom = 22.0
+text = "1"
+
+[node name="second" type="Button" parent="ScaleControl/HeatScale"]
+z_index = -1
+offset_left = -50.0
+offset_top = -21.0
+offset_right = 1.0
+offset_bottom = 22.0
+text = "2"
+
+[node name="third" type="Button" parent="ScaleControl/HeatScale"]
+z_index = -1
+offset_left = 1.0
+offset_top = -21.0
+offset_right = 53.0
+offset_bottom = 22.0
+text = "3"
+
+[node name="shutdown" type="Button" parent="ScaleControl/HeatScale"]
+z_index = -1
+offset_left = 53.0
+offset_top = -21.0
+offset_right = 108.0
+offset_bottom = 22.0
+text = "S"
+
+[connection signal="button_down" from="ScaleControl/HeatScale/first" to="ScaleControl/HeatScale" method="_on_first_button_down"]
+[connection signal="button_down" from="ScaleControl/HeatScale/second" to="ScaleControl/HeatScale" method="_on_second_button_down"]
+[connection signal="button_down" from="ScaleControl/HeatScale/third" to="ScaleControl/HeatScale" method="_on_third_button_down"]
+[connection signal="button_down" from="ScaleControl/HeatScale/shutdown" to="ScaleControl/HeatScale" method="_on_shutdown_button_down"]

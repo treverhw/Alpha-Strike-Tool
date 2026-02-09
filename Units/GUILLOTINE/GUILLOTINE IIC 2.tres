@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/guillotine-iic-3060.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+callsign = "2"
+title = "GUILLOTINE IIC"
+pv = 47
+type = "BM"
+sz = 3
+tmm = 1
+move = 8/12j
+role = "Skirmisher"
+skill = 4
+damageS = 5
+damageM = 5
+damageL = 2
+ov = 1
+armor = 7
+struct = 6
+special = Array[String](["CASE", "JMPS1"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

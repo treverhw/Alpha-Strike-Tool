@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/catapult-rg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+callsign = "CPLT-C4C"
+title = "CATAPULT"
+pv = 36
+type = "BM"
+sz = 3
+tmm = 1
+move = 8j
+role = "Missile Boat"
+skill = 4
+damageS = 3
+damageM = 3
+damageL = 3
+ov = 1
+armor = 5
+struct = 3
+special = Array[String](["IF2", "LRM1/2/2", "PRB", "RCN"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"
