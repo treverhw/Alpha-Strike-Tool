@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/bolla-jhs76.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "Invictus"
+title = "BOLLA STEALTH TANK"
+pv = 41
+type = "CV"
+sz = 3
+tmm = 2
+move = "10w"
+role = "Missile Boat"
+skill = 4
+damageS = 3
+damageM = 2
+damageL = 1
+ov = 0
+armor = 6
+struct = 3
+special = Array[String](["C3I", "ECM", "IF1", "IT6", "MHQ2", "OMNI", "SRCH", "STL", "TUR(3/2/1", "IF1)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

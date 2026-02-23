@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/fury-3050u.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "(Fury II)"
+title = "FURY COMMAND TANK"
+pv = 29
+type = "CV"
+sz = 4
+tmm = 1
+move = "8t"
+role = "Sniper"
+skill = 4
+damageS = 2
+damageM = 2
+damageL = 2
+ov = 0
+armor = 8
+struct = 4
+special = Array[String](["SRCH", "TUR(1/2/2)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

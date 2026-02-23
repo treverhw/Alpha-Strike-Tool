@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/puma-3050u.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "PAT-005b"
+title = "PUMA ASSAULT TANK"
+pv = 43
+type = "CV"
+sz = 4
+tmm = 1
+move = "6t"
+role = "Missile Boat"
+skill = 4
+damageS = 5
+damageM = 6
+damageL = 5
+ov = 0
+armor = 6
+struct = 5
+special = Array[String](["CASE", "IF3", "REAR0*/-/-", "SRCH", "TUR(1/1/1)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

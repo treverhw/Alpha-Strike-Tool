@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/gnome-3058u.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "(LRM) (Sqd5)"
+title = "GNOME BATTLE ARMOR"
+pv = 19
+type = "BA"
+sz = 1
+tmm = 0
+move = "4j"
+role = "Missile Boat"
+skill = 4
+damageS = 2
+damageM = 2
+damageL = 1
+ov = 0
+armor = 2
+struct = 2
+special = Array[String](["CAR5", "IF1", "MEC"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/heavy-nlrm-carrier-proto.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = " "
+title = "HEAVY NLRM CARRIER"
+pv = 31
+type = "CV"
+sz = 4
+tmm = 1
+move = "6t"
+role = "Missile Boat"
+skill = 4
+damageS = 3
+damageM = 3
+damageL = 3
+ov = 0
+armor = 5
+struct = 4
+special = Array[String](["CR", "FC", "IF3", "LRM3/3/3", "SRCH", "TUR(3/3/3", "IF3", "LRM2/3/3)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

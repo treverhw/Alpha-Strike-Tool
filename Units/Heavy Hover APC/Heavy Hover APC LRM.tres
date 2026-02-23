@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/heavy-hover-apc-3060.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "(LRM)"
+title = "HEAVY HOVER APC"
+pv = 14
+type = "CV"
+sz = 1
+tmm = 3
+move = "16h"
+role = "Scout"
+skill = 4
+damageS = 1
+damageM = 0
+damageL = 0
+ov = 0
+armor = 2
+struct = 1
+special = Array[String](["EE", "IF0*", "IT3", "SRCH"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

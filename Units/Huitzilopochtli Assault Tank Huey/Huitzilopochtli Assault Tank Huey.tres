@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/huitzilopochtli-3060.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = " "
+title = "HUITZILOPOCHTLI ASSAULT TANK "HUEY""
+pv = 48
+type = "CV"
+sz = 4
+tmm = 0
+move = "4t"
+role = "Missile Boat"
+skill = 4
+damageS = 4
+damageM = 3
+damageL = 1
+ov = 0
+armor = 3
+struct = 5
+special = Array[String](["ARTAC-2", "CASE", "ECM", "EE", "SRCH", "TUR(3/3/-)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

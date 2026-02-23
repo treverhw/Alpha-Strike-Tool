@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3 uid="uid://d1wweh0cguxno"]
+
+[ext_resource type="Script" uid="uid://dj1da82xsjhtw" path="res://UnitInfo.gd" id="1_tvu03"]
+[ext_resource type="Texture2D" uid="uid://blx5n24a8yau6" path="res://Sprites/emplacement_placeholder.png" id="2_bjy5m"]
+
+[resource]
+script = ExtResource("1_tvu03")
+unitIMG = ExtResource("2_bjy5m")
+variant = "(2X AC/5)"
+title = "Medium Emplacement (AC/20)"
+pv = 10
+type = "BD"
+move = "0"
+role = "None"
+skill = 4
+damageS = 1
+damageM = 1
+damageL = 1
+armor = 4
+struct = 4
+special = Array[String](["CF:4", "AC1/1/1", "IMMOBILE"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

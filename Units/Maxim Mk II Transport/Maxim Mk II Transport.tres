@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/maxim-mk-ii-3085.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = " "
+title = "MAXIM MK II TRANSPORT"
+pv = 25
+type = "CV"
+sz = 2
+tmm = 3
+move = "16h"
+role = "Striker"
+skill = 4
+damageS = 1
+damageM = 1
+damageL = 0
+ov = 0
+armor = 4
+struct = 3
+special = Array[String](["CASE", "IF0*", "IT16", "SRCH", "TUR(1/1/0*", "IF0*)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

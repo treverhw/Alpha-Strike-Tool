@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://uxq3fqb3lhe5"]
 
-[ext_resource type="Script" uid="uid://ckrs8cwf2baj3" path="res://Units/UnitCard.gd" id="1_8e0a1"]
+[ext_resource type="Script" uid="uid://ckrs8cwf2baj3" path="res://UnitCard.gd" id="1_8e0a1"]
 [ext_resource type="Texture2D" uid="uid://bqjudwhrflhyt" path="res://Sprites/ASUnitCard.png" id="3_tqojt"]
 [ext_resource type="Texture2D" uid="uid://c7et3rkdax1sn" path="res://Sprites/Units/hatamoto-rg.png" id="4_kvswk"]
 [ext_resource type="Texture2D" uid="uid://dupw7bm6c73ix" path="res://Sprites/ASUnitCard_Backdrop.png" id="5_whmh8"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://crhnk2w1fvpo" path="res://Fonts/Roboto_Condensed/static/RobotoCondensed-ExtraBold.ttf" id="10_d8mch"]
 [ext_resource type="Texture2D" uid="uid://ev6hk5g21b0r" path="res://Sprites/heat_scale.png" id="11_0amtm"]
 [ext_resource type="Script" uid="uid://b1ajh0ju0k2hb" path="res://HeatScale.gd" id="12_bgya8"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m710d"]
 atlas = ExtResource("11_0amtm")

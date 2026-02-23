@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/cloud-nine-trva.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = " "
+title = "CLOUD TEN CARRIER AIRSHIP"
+pv = 48
+type = "SV"
+sz = 5
+tmm = 0
+move = "2i"
+role = "Attack"
+skill = 4
+damageS = 3
+damageM = 4
+damageL = 4
+ov = 0
+armor = 4
+struct = 10
+special = Array[String](["AECM", "AFC", "ARTT-1", "ATMO", "BAR", "CT223", "IT20", "FLK2/3/3", "MASH1", "MFB", "MHQ13", "RCN", "REAR1/1/1", "RSD1", "SLG", "SRCH", "VTM4D4"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

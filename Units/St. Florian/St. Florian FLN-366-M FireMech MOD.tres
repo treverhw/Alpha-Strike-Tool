@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/st-florian-irreg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "FLN-366-M FireMech MOD"
+title = "ST. FLORIAN"
+pv = 30
+type = "IM"
+sz = 4
+tmm = 1
+move = "6"
+role = "Ambusher"
+skill = 4
+damageS = 2
+damageM = 2
+damageL = 0
+ov = 2
+armor = 6
+struct = 7
+special = Array[String](["AFC", " HT2/1/-", " SEAL", " SOA", " SRCH"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

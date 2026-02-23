@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3 uid="uid://djeitvpl03wjw"]
+
+[ext_resource type="Script" uid="uid://dj1da82xsjhtw" path="res://UnitInfo.gd" id="1_3fm8e"]
+[ext_resource type="Texture2D" uid="uid://blx5n24a8yau6" path="res://Sprites/emplacement_placeholder.png" id="2_rmf8i"]
+
+[resource]
+script = ExtResource("1_3fm8e")
+unitIMG = ExtResource("2_rmf8i")
+variant = "(3X AC/2)"
+title = "Light Emplacement"
+pv = 9
+type = "BD"
+move = "0"
+role = "None"
+skill = 4
+damageM = 1
+damageL = 1
+armor = 3
+struct = 3
+special = Array[String](["CF:3", "IMMOBILE"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/mobile-hq-rg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "(ICE - LRM)"
+title = "MOBILE HEADQUARTERS"
+pv = 19
+type = "CV"
+sz = 1
+tmm = 2
+move = "10w"
+role = "None"
+skill = 4
+damageS = 0
+damageM = 1
+damageL = 1
+ov = 0
+armor = 3
+struct = 2
+special = Array[String](["CT0.5", "EE", "IF1", "MHQ2", "RCN", "SRCH", "TUR(0*/1/1", "IF1)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

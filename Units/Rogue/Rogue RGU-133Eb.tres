@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/rogue-3050u.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "RGU-133Eb"
+title = "ROGUE"
+pv = 27
+type = "AF"
+sz = 1
+tmm = 1
+move = "7a"
+role = "Fast Dogfighter"
+skill = 4
+damageS = 2
+damageM = 3
+damageL = 2
+ov = 0
+armor = 3
+struct = 4
+special = Array[String](["BOMB1", "FUEL20", "REAR1/1/-", "SPC", "VSTOL"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

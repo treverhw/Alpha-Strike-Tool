@@ -1,13 +1,12 @@
-import requests, json, os, re, string, sys
+import requests, json, os, re, sys
 
 # Configuration
 QUERY_URL = "http://masterunitlist.info/Unit/QuickList?"
 OUTPUT_DIR = "./Units"
 IMG_DIR = "Sprites/Units/"
 img_name = ""
-alphabet = list(string.ascii_uppercase)
 
-era_ids     = [247, 255, 256, 257, 258, 13, 24, 27, 29, 31, 35, 254]
+era_ids     = [9, 10, 11, 255, 256, 13, 247, 14, 15, 254, 16, 257]
 """
 Battlemech	    = 18
 Combat Vehicle	= 19
@@ -30,8 +29,10 @@ def cleanNameParts(unit):
     name = str(unit["Class"])
     variant = str(unit["Variant"])
 
+
     fileParts = (name + " " + variant).split()
     nameParts = name.split()
+
 
     for part in nameParts:
         while "\"" in part:
@@ -67,8 +68,7 @@ def cleanNameParts(unit):
             newFileName += part
         else:
             newFileName += (" " + part)
-    
-
+        
     return name, variant, newFileName, newDirName
 
 def calculate_tmm(move_str):
@@ -641,17 +641,6 @@ def main():
                                 with open(file_path, "w") as f:
                                     f.write(tres)
                                 #print(f"Resource Written: {file_path}")
-
-                                #Generate the Scene file
-                                tscn = generateScene(f"Units/{tres_path}", img_path)
-                                tscn_path = f"{newDirName}/{file_name}.tscn"
-                                file_path = os.path.join(OUTPUT_DIR, tscn_path)
-
-                                #Write the Scene file
-                                #print(f"Scene Attempt: {file_path}")
-                                with open(file_path, "w") as f:
-                                    f.write(tscn)
-                                #print(f"Scene Created: {file_path}")
                     else:
                         os.remove(f"{json_name}.json")
                         

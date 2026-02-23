@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmjeerdhmfjvk"]
+[gd_scene load_steps=5 format=3 uid="uid://dmjeerdhmfjvk"]
 
 [ext_resource type="Script" uid="uid://b311gxwakompb" path="res://Main.gd" id="1_glv2v"]
 [ext_resource type="Texture2D" uid="uid://dupw7bm6c73ix" path="res://Sprites/ASUnitCard_Backdrop.png" id="3_fos0i"]
 [ext_resource type="FontFile" uid="uid://dr1ehbyf7j7h" path="res://Fonts/Orbitron/static/Orbitron-Black.ttf" id="4_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://ck87pe21lg3io" path="res://UnitSearch.tscn" id="4_cm0pq"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -67,17 +68,27 @@ theme_override_fonts/font = ExtResource("4_3dxm6")
 theme_override_font_sizes/font_size = 24
 text = "Quit"
 
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MainContainer"]
+layout_mode = 2
+
 [node name="UnitCardContainer" type="AspectRatioContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(1050, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 ratio = 1.4
 
+[node name="UnitSearch" parent="MainContainer" instance=ExtResource("4_cm0pq")]
+visible = false
+layout_mode = 2
+
 [node name="UnitListContainer" type="VBoxContainer" parent="MainContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(300, 1040)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+alignment = 1
 
+[connection signal="button_down" from="MainContainer/MenuContainer/Roster" to="." method="_on_roster_button_down"]
 [connection signal="button_down" from="MainContainer/MenuContainer/Search" to="." method="_on_search_button_down"]
 [connection signal="button_down" from="MainContainer/MenuContainer/Quit" to="." method="_on_quit_button_down"]

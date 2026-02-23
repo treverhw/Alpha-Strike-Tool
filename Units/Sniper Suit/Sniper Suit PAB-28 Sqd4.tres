@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/pab-28-3145.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "PAB-28 (Sqd4)"
+title = "SNIPER SUIT"
+pv = 9
+type = "BA"
+sz = 1
+tmm = 0
+move = "2f"
+role = "Ambusher"
+skill = 4
+damageS = 2
+damageM = 1
+damageL = 0
+ov = 0
+armor = 0
+struct = 2
+special = Array[String](["AM", "CAR4", "MEC", "STL"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

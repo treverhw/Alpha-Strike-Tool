@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/bokkusu-3085.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "None"
+title = "TENMAKU COMMAND TRAILER"
+pv = 42
+type = "CV"
+sz = 3
+tmm = 0
+move = "0w"
+role = "Juggernaut"
+skill = 4
+damageS = 2
+damageM = 2
+damageL = 0
+ov = 0
+armor = 10
+struct = 4
+special = Array[String](["AMS", "C3M2", "CASE", "CT5", "ECM", "HTC", "IT8", "MHQ20", "RCN", "SRCH", "TAG", "TUR(AMS)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

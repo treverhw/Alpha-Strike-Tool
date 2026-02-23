@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3 uid="uid://c5g0m4yhiaccg"]
+
+[ext_resource type="Script" uid="uid://dj1da82xsjhtw" path="res://UnitInfo.gd" id="1_qwpgf"]
+[ext_resource type="Texture2D" uid="uid://blx5n24a8yau6" path="res://Sprites/emplacement_placeholder.png" id="2_782jk"]
+
+[resource]
+script = ExtResource("1_qwpgf")
+unitIMG = ExtResource("2_782jk")
+variant = "(AC/20)"
+title = "Heavy Emplacement"
+pv = 15
+type = "BD"
+move = "0"
+role = "None"
+skill = 4
+damageS = 2
+damageM = 2
+armor = 6
+struct = 6
+special = Array[String](["CF:6", "AC2/2/0", "IMMOBILE"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"
