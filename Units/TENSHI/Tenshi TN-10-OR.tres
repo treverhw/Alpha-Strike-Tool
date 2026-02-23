@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/tenshi-3145.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "TN-10-OR"
+title = "TENSHI"
+pv = 48
+type = "BM"
+sz = 4
+tmm = 1
+move = "6"
+role = "Missile Boat"
+skill = 4
+damageS = 3
+damageM = 4
+damageL = 3
+ov = 2
+armor = 10
+struct = 5
+special = Array[String](["IF2", "OMNI"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

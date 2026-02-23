@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/challenger-3058u.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "XII"
+title = "CHALLENGER MBT"
+pv = 49
+type = "CV"
+sz = 4
+tmm = 1
+move = "6t"
+role = "Juggernaut"
+skill = 4
+damageS = 5
+damageM = 6
+damageL = 4
+ov = 0
+armor = 8
+struct = 5
+special = Array[String](["C3S", "ECM", "IF1", "MHQ1", "SRCH", "TUR(4/5/4", "IF1)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

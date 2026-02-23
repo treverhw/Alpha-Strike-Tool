@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/kamisori-light-tank-rg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "B"
+title = "KAMISORI LIGHT TANK"
+pv = 23
+type = "cv"
+sz = 1
+tmm = 3
+move = "16t"
+role = "Scout"
+skill = 4
+damageS = 2
+damageM = 1
+damageL = 0
+ov = 0
+armor = 4
+struct = 1
+special = Array[String](["ENE", "OMNI", "SRCH", "TUR(2/1/-)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

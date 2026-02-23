@@ -1,9 +1,4 @@
-import requests
-import json
-import os
-import re
-import time
-import string
+import requests, json, os, re, string, sys
 
 # Configuration
 QUERY_URL = "http://masterunitlist.info/Unit/QuickList?"
@@ -12,9 +7,21 @@ IMG_DIR = "Sprites/Units/"
 img_name = ""
 alphabet = list(string.ascii_uppercase)
 
-#Limited run, innersphere era 257
-technologies = [1, 2]
-era_ids = [257, 10, 13, 247, 14, 15, 254]
+era_ids     = [247, 255, 256, 257, 258, 13, 24, 27, 29, 31, 35, 254]
+"""
+Battlemech	    = 18
+Combat Vehicle	= 19
+Aerospace	    = 17
+Infantry	    = 21
+Industrial Mech	= 20
+Proto Mech      = 23
+Support Vehicle	= 24
+Advanced Aero	= 81
+Advanced Supp	= 79
+Building        = 97
+Unknown         = 76
+"""
+types       = [18, 19, 17, 21, 20, 23, 24, 81, 79, 97, 76]
 
 def cleanNameParts(unit):
 
@@ -593,16 +600,16 @@ def main():
 
     print(f"Fetching data from Master Unit List...")
 
-    for tech in technologies:
-        for era in era_ids:
+    for era in era_ids:
+        for type in types:
                 try:
-                    json_name = f"JSON_Data/Types_18_Technologies_{tech}_AvailableEras_{era}"
+                    json_name = f"JSON_Data/Era_{era}_Type_{type}"
                     
                     #Download the JSON if it doesn't exist, otherwise load it from the file
                     if not os.path.exists(f"{json_name}.json"):
 
                         print("Requesting JSON")
-                        response = requests.get(f"{QUERY_URL}Types=18&Technologies={tech}&AvailableEras={era}")
+                        response = requests.get(f"{QUERY_URL}Types={type}&Eras={era}")
                         print("Request Retrieved")
                         response.raise_for_status()
                         with open(f"{json_name}.json", "w", encoding='utf-8') as file:
@@ -615,41 +622,45 @@ def main():
                         data = json.load(jf)
                     unitList = data["Units"]
 
-                    #create the tres
-                    for unit in unitList:
-                        if unit["BFPointValue"] != 0:
-                            print(f"Processing: {unit['Name']} | {unit['Type']['Name']} | {unit['Technology']['Name']} era {unit['EraId']} from {unit['DateIntroduced']}")
-                            
-                            #Generate the resource file
-                            file_name, tres, img_path, newDirName = generate_tres(unit)
-                            tres_path = f"{newDirName}/{file_name}.tres"
-                            print(tres_path)
-                            os.makedirs(os.path.join(OUTPUT_DIR, f"{newDirName}"), exist_ok=True)
-                            file_path = os.path.join(OUTPUT_DIR, tres_path)
-                            print(f"Resource Created: {file_path}")
+                    if unitList:
+                        #create the tres
+                        for unit in unitList:
+                            if unit["BFPointValue"] != 0:
+                                print(f"Processing: {unit['Name']} | {unit['Type']['Name']} | {unit['Technology']['Name']} era {unit['EraId']} from {unit['DateIntroduced']}")
+                                
+                                #Generate the resource file
+                                file_name, tres, img_path, newDirName = generate_tres(unit)
+                                tres_path = f"{newDirName}/{file_name}.tres"
+                                #print(tres_path)
+                                os.makedirs(os.path.join(OUTPUT_DIR, f"{newDirName}"), exist_ok=True)
+                                file_path = os.path.join(OUTPUT_DIR, tres_path)
+                                #print(f"Resource Created: {file_path}")
 
-                            print(f"Resource Attempt: {file_path}")
-                            #Write the resource file
-                            with open(file_path, "w") as f:
-                                f.write(tres)
-                            print(f"Resource Written: {file_path}")
+                                #print(f"Resource Attempt: {file_path}")
+                                #Write the resource file
+                                with open(file_path, "w") as f:
+                                    f.write(tres)
+                                #print(f"Resource Written: {file_path}")
 
-                            #Generate the Scene file
-                            tscn = generateScene(f"Units/{tres_path}", img_path)
-                            tscn_path = f"{newDirName}/{file_name}.tscn"
-                            file_path = os.path.join(OUTPUT_DIR, tscn_path)
+                                #Generate the Scene file
+                                tscn = generateScene(f"Units/{tres_path}", img_path)
+                                tscn_path = f"{newDirName}/{file_name}.tscn"
+                                file_path = os.path.join(OUTPUT_DIR, tscn_path)
 
-                            #Write the Scene file
-                            print(f"Scene Attempt: {file_path}")
-                            with open(file_path, "w") as f:
-                                f.write(tscn)
-                            #print(f"Scene Created: {file_path}")
-                
+                                #Write the Scene file
+                                #print(f"Scene Attempt: {file_path}")
+                                with open(file_path, "w") as f:
+                                    f.write(tscn)
+                                #print(f"Scene Created: {file_path}")
+                    else:
+                        os.remove(f"{json_name}.json")
                         
                 except requests.exceptions.RequestException as e:
                     print(f"Network error: {e}")
+                    sys.exit(0)
                 except json.JSONDecodeError:
                     print("Error: The server did not return valid JSON.")
+                    sys.exit(0)
                 except Exception as e:  
                     print(f"An unexpected error occurred: {e}")
 

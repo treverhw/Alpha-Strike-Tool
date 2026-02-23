@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/condor-rg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "(Laser)"
+title = "CONDOR HEAVY HOVER TANK"
+pv = 34
+type = "CV"
+sz = 2
+tmm = 3
+move = "16h"
+role = "Striker"
+skill = 4
+damageS = 3
+damageM = 3
+damageL = 0
+ov = 0
+armor = 4
+struct = 3
+special = Array[String](["SRCH", "TUR(3/3/-)"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

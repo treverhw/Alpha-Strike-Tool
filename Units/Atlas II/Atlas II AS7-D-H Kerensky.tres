@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/atlas-ii-rg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "AS7-D-H (Kerensky)"
+title = "ATLAS II"
+pv = 67
+type = "BM"
+sz = 4
+tmm = 1
+move = "6"
+role = "Juggernaut"
+skill = 4
+damageS = 7
+damageM = 7
+damageL = 5
+ov = 1
+armor = 10
+struct = 8
+special = Array[String](["CASE", "ECM", "FLK1/1/1", "IF1", "PRB", "RCN"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

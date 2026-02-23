@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/inquisitor-trva.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "ITW-200 SecurityMech"
+title = "INQUISITOR II"
+pv = 27
+type = "IM"
+sz = 2
+tmm = 1
+move = "8"
+role = "Sniper"
+skill = 4
+damageS = 2
+damageM = 2
+damageL = 0
+ov = 0
+armor = 4
+struct = 4
+special = Array[String](["AFC", "CASEII", "ES", "PRB", "RCN", "SRCH", "TSEMP1"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

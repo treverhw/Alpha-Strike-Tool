@@ -20,13 +20,12 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 func loadUnits(path: String, text: String) -> void:
 	#print("Loading Units at " + path)
 	var dir: DirAccess = DirAccess.open(path)
-	var curr: DirAccess
 	if dir:
 		dir.list_dir_begin()
 		var file = dir.get_next()
 		while file != "" and len(text) >= 2:
-			print(text + " | " + file + " -> " + str(file.begins_with(text)))
-			if dir.current_is_dir() and file.to_lower().begins_with(text.to_lower()):
+			print(text + " | " + file + " -> " + str(text in file))
+			if dir.current_is_dir() and text.to_lower() in file.to_lower():
 				loadUnits(path + file + "/", text)
 			else:
 				addUnitToList(path + file)

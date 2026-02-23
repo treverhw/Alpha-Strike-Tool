@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/sprint-3058u.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = " "
+title = "SPRINT SCOUT HELICOPTER"
+pv = 12
+type = "CV"
+sz = 1
+tmm = 4
+move = "26v"
+role = "Scout"
+skill = 4
+damageS = 0
+damageM = 0
+damageL = 0
+ov = 0
+armor = 1
+struct = 1
+special = Array[String](["ATMO", "ENE", "PRB", "RCN", "SRCH", "TAG"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"
