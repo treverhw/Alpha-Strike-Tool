@@ -8,13 +8,20 @@ func _ready() -> void:
 
 func update() -> void:
 	
+	for button in unitList.get_children():
+		unitList.remove_child(button)
+		button.queue_free()
+
 	for unit in unitCards.get_children():
-		var newButton = unitList.get_child(0).duplicate()
-		unitList.add_child(newButton)
+		var newButton = UnitListButton.new()
 		newButton.myUnit = unit
-		newButton.text = unit.stats.callsign
+		newButton.text = unit.stats.variant
 		newButton.visible = true
-		
+		unitList.add_child(newButton)
+
+func _on_search_button_down() -> void:
+	var search = load("res://UnitSearch.tscn").instantiate()
+	add_child(search)
 
 func _on_quit_button_down() -> void:
 	get_tree().quit()

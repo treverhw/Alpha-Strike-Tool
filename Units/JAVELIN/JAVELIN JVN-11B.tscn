@@ -1,7 +1,7 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" uid="uid://ckrs8cwf2baj3" path="res://Units/UnitCard.gd" id="1_8e0a1"]
-[ext_resource type="Resource" path="res://Units/JAVELIN/JAVELIN JVN-11B.tres" id="2_wavwk"]
+[ext_resource type="Resource" path="res://Units/Javelin/Javelin JVN-11B.tres" id="2_wavwk"]
 [ext_resource type="Texture2D" uid="uid://bqjudwhrflhyt" path="res://Sprites/ASUnitCard.png" id="3_tqojt"]
 [ext_resource type="Texture2D" path="res://Sprites/Units/javelin-rg.png" id="4_kvswk"]
 [ext_resource type="Texture2D" uid="uid://dupw7bm6c73ix" path="res://Sprites/ASUnitCard_Backdrop.png" id="5_whmh8"]
@@ -204,7 +204,7 @@ offset_top = -370.0
 offset_right = -486.0
 offset_bottom = -330.0
 
-[node name="CALLSIGN" type="Label" parent="ScaleControl/Labels"]
+[node name="VARIANT" type="Label" parent="ScaleControl/Labels"]
 layout_mode = 0
 offset_left = 55.0
 offset_top = 32.0
@@ -213,7 +213,7 @@ offset_bottom = 93.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_67y70")
 theme_override_font_sizes/font_size = 48
-text = "callsign"
+text = "variant"
 
 [node name="TITLE" type="Label" parent="ScaleControl/Labels"]
 layout_mode = 0

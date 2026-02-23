@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
 
 [ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
 [ext_resource type="Texture2D" path="res://Sprites/Units/uziel-3067.png" id="2_ynkeb"]
@@ -6,13 +6,13 @@
 [resource]
 script = ExtResource("1_cs3jr")
 unitIMG = ExtResource("2_ynkeb")
-callsign = "UZL-8S"
+variant = "UZL-8S"
 title = "UZIEL"
 pv = 43
 type = "BM"
 sz = 2
 tmm = 2
-move = 10/16j
+move = "10/16j"
 role = "Striker"
 skill = 4
 damageS = 4

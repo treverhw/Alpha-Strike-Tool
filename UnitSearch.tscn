@@ -1,9 +1,44 @@
-[gd_scene format=3 uid="uid://ck87pe21lg3io"]
+[gd_scene load_steps=3 format=3 uid="uid://ck87pe21lg3io"]
+
+[ext_resource type="Script" uid="uid://ct8ant5prb0c5" path="res://UnitSearch.gd" id="1_tbd2d"]
+[ext_resource type="FontFile" uid="uid://dr1ehbyf7j7h" path="res://Fonts/Orbitron/static/Orbitron-Black.ttf" id="2_h4rmx"]
 
 [node name="UnitSearch" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tbd2d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(1050, 750)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -525.0
+offset_top = -392.5
+offset_right = 525.0
+offset_bottom = 392.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter Unit Name..."
+
+[node name="UnitList" type="ItemList" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1050, 719)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h4rmx")
+theme_override_font_sizes/font_size = 24
+item_count = 1
+item_0/text = "Dooder"
+
+[connection signal="text_changed" from="VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]

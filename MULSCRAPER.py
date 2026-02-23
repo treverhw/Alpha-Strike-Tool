@@ -18,41 +18,51 @@ era_ids = [257, 10, 13, 247, 14, 15, 254]
 
 def cleanNameParts(unit):
 
-    nameParts = str(unit["Name"]).split()
+    newFileName = ""
+    newDirName = ""
+    name = str(unit["Class"])
+    variant = str(unit["Variant"])
 
-    counter = 0
+    fileParts = (name + " " + variant).split()
+    nameParts = name.split()
+
     for part in nameParts:
-        while "\"" in nameParts[counter]:
-            nameParts[counter] = re.sub("\"", "(", nameParts[counter], count = 1)
-            nameParts[counter] = re.sub("\"", ")", nameParts[counter], count = 1)
-        while '"' in nameParts[counter]:
-            nameParts[counter] = re.sub('"', "(", nameParts[counter], count = 1)
-            nameParts[counter] = re.sub('"', ")", nameParts[counter], count = 1)
-        while "/" in nameParts[counter]:
-            nameParts[counter] = re.sub("/", " ", nameParts[counter], count = 1)
+        while "\"" in part:
+            part = re.sub("\"", "", part, count = 1)
+        while '"' in part:
+            part = re.sub('"', "", part, count = 1)
+        while "/" in part:
+            part = re.sub("/", " ", part, count = 1)
+        while "(" in part:
+            part = re.sub(r"\(", "", part, count = 1)
+        while ")" in part:
+            part = re.sub(r"\)", "", part, count = 1)
+        
+        if newDirName == "":
+            newDirName += part
+        else:
+            newDirName += (" " + part)
 
-        counter += 1
+    for part in fileParts:
 
-
-    name = ""
-    callsign = ""
-
-    if unit["Technology"]["Name"] == "Clan":
-        callsign = nameParts.pop()
-        for part in nameParts:
-            if name == "":
-                name += part
-            else: name += (" " + part)
-    else:
-        for part in nameParts:
-            if "-" in part:
-                callsign = part
-            else: 
-                if name == "":
-                    name += part
-                else: name += (" " + part)
+        while "\"" in part:
+            part = re.sub("\"", "", part, count = 1)
+        while '"' in part:
+            part = re.sub('"', "", part, count = 1)
+        while "/" in part:
+            part = re.sub("/", " ", part, count = 1)
+        while "(" in part:
+            part = re.sub(r"\(", "", part, count = 1)
+        while ")" in part:
+            part = re.sub(r"\)", "", part, count = 1)
+        
+        if newFileName == "":
+            newFileName += part
+        else:
+            newFileName += (" " + part)
     
-    return callsign, name
+
+    return name, variant, newFileName, newDirName
 
 def calculate_tmm(move_str):
     try:
@@ -68,7 +78,7 @@ def calculate_tmm(move_str):
 
 def generate_tres(unit):
     
-    callsign, name = cleanNameParts(unit)
+    name, variant, newFileName, newDirName = cleanNameParts(unit)
     
     name = name.upper()
     pv = str(unit["BFPointValue"])
@@ -92,6 +102,7 @@ def generate_tres(unit):
     if unit["BFAbilities"] and unit["BFAbilities"] != "None":
         specialList = unit["BFAbilities"].split(",")
         for ability in specialList:
+            ability = ability.replace('"', '\\"')
             special += f'"{ability}"'
             if ability != specialList[len(specialList)-1]:
                 special += ", "
@@ -113,7 +124,7 @@ def generate_tres(unit):
             print(f"Image Downloaded: {img_path}")
             f.close()
 
-    tres = f"""[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+    tres = f"""[gd_resource type="Resource" script_class="UnitInfo" format=3]
 
 [ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
 [ext_resource type="Texture2D" path="res://{img_path}" id="2_ynkeb"]
@@ -121,13 +132,13 @@ def generate_tres(unit):
 [resource]
 script = ExtResource("1_cs3jr")
 unitIMG = ExtResource("2_ynkeb")
-callsign = "{callsign}"
+variant = "{variant}"
 title = "{name}"
 pv = {pv}
 type = "{type}"
 sz = {size}
 tmm = {tmm}
-move = {move}
+move = "{move}"
 role = "{role}"
 skill = {skill}
 damageS = {damageS}
@@ -140,9 +151,7 @@ special = Array[String]([{special}])
 metadata/_custom_type_script = "uid://dj1da82xsjhtw"
 """
     
-    file_name = name + " " + callsign
-    return file_name, tres, img_path
-
+    return newFileName, tres, img_path, newDirName
 
 def generateScene(tres_path, img_path):
 
@@ -207,7 +216,6 @@ animations = [{
 }]
 
 """
-
     end = f"""
 [node name="{tres_path.split().pop()[:-5]}" type="Control"]
 custom_minimum_size = Vector2(1050, 750)
@@ -356,7 +364,7 @@ offset_top = -370.0
 offset_right = -486.0
 offset_bottom = -330.0
 
-[node name="CALLSIGN" type="Label" parent="ScaleControl/Labels"]
+[node name="VARIANT" type="Label" parent="ScaleControl/Labels"]
 layout_mode = 0
 offset_left = 55.0
 offset_top = 32.0
@@ -365,7 +373,7 @@ offset_bottom = 93.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_67y70")
 theme_override_font_sizes/font_size = 48
-text = "callsign"
+text = "variant"
 
 [node name="TITLE" type="Label" parent="ScaleControl/Labels"]
 layout_mode = 0
@@ -579,7 +587,6 @@ text = "S"
 """
     return first + middle + end
     
-
 def main():
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
@@ -610,30 +617,30 @@ def main():
 
                     #create the tres
                     for unit in unitList:
-                        time.sleep(.1)
                         if unit["BFPointValue"] != 0:
                             print(f"Processing: {unit['Name']} | {unit['Type']['Name']} | {unit['Technology']['Name']} era {unit['EraId']} from {unit['DateIntroduced']}")
                             
                             #Generate the resource file
-                            file_name, tres, img_path = generate_tres(unit)
-                            tres_path = f"{file_name.split()[0]}/{file_name}.tres"
+                            file_name, tres, img_path, newDirName = generate_tres(unit)
+                            tres_path = f"{newDirName}/{file_name}.tres"
                             print(tres_path)
-                            os.makedirs(os.path.join(OUTPUT_DIR, f"{file_name.split()[0]}"), exist_ok=True)
+                            os.makedirs(os.path.join(OUTPUT_DIR, f"{newDirName}"), exist_ok=True)
                             file_path = os.path.join(OUTPUT_DIR, tres_path)
+                            print(f"Resource Created: {file_path}")
 
+                            print(f"Resource Attempt: {file_path}")
                             #Write the resource file
-                            #print(f"Resource Attempt: {file_path}")
                             with open(file_path, "w") as f:
                                 f.write(tres)
-                            #print(f"Resource Created: {file_path}")
+                            print(f"Resource Written: {file_path}")
 
                             #Generate the Scene file
                             tscn = generateScene(f"Units/{tres_path}", img_path)
-                            tscn_path = f"{file_name.split()[0]}/{file_name}.tscn"
+                            tscn_path = f"{newDirName}/{file_name}.tscn"
                             file_path = os.path.join(OUTPUT_DIR, tscn_path)
 
                             #Write the Scene file
-                            #print(f"Scene Attempt: {file_path}")
+                            print(f"Scene Attempt: {file_path}")
                             with open(file_path, "w") as f:
                                 f.write(tscn)
                             #print(f"Scene Created: {file_path}")
@@ -643,7 +650,7 @@ def main():
                     print(f"Network error: {e}")
                 except json.JSONDecodeError:
                     print("Error: The server did not return valid JSON.")
-                except Exception as e:
+                except Exception as e:  
                     print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":

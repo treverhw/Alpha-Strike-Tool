@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/atlas-rg.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "AS7-S (Hanssen)"
+title = "ATLAS"
+pv = 53
+type = "BM"
+sz = 4
+tmm = 1
+move = "6"
+role = "Sniper"
+skill = 4
+damageS = 4
+damageM = 5
+damageL = 4
+ov = 0
+armor = 10
+struct = 8
+special = Array[String](["IF1", "LRM1/1/1", "REAR1/1/-", "TAG"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

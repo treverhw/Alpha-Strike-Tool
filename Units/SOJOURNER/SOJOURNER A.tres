@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
 
 [ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
 [ext_resource type="Texture2D" path="res://Sprites/Units/sojourner-rg.png" id="2_ynkeb"]
@@ -6,13 +6,13 @@
 [resource]
 script = ExtResource("1_cs3jr")
 unitIMG = ExtResource("2_ynkeb")
-callsign = "A"
+variant = "A"
 title = "SOJOURNER"
 pv = 41
 type = "BM"
 sz = 3
 tmm = 2
-move = 10
+move = "10"
 role = "Brawler"
 skill = 4
 damageS = 4

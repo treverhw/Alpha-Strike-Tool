@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
 
 [ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
 [ext_resource type="Texture2D" path="res://Sprites/Units/valiant-3e-xtr.png" id="2_ynkeb"]
@@ -6,13 +6,13 @@
 [resource]
 script = ExtResource("1_cs3jr")
 unitIMG = ExtResource("2_ynkeb")
-callsign = "VLT-3E"
+variant = "VLT-3E"
 title = "VALIANT"
 pv = 33
 type = "BM"
 sz = 1
 tmm = 3
-move = 14
+move = "14"
 role = "Striker"
 skill = 4
 damageS = 3

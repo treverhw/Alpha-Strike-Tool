@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
+
+[ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
+[ext_resource type="Texture2D" path="res://Sprites/Units/phoenix-hawk-iic-3085.png" id="2_ynkeb"]
+
+[resource]
+script = ExtResource("1_cs3jr")
+unitIMG = ExtResource("2_ynkeb")
+variant = "8"
+title = "PHOENIX HAWK IIC"
+pv = 59
+type = "BM"
+sz = 4
+tmm = 2
+move = "10/14j"
+role = "Skirmisher"
+skill = 4
+damageS = 4
+damageM = 4
+damageL = 3
+ov = 1
+armor = 8
+struct = 3
+special = Array[String](["ECM", "ENE", "JMPS1"])
+metadata/_custom_type_script = "uid://dj1da82xsjhtw"

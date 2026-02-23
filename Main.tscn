@@ -1,13 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmjeerdhmfjvk"]
+[gd_scene load_steps=4 format=3 uid="uid://dmjeerdhmfjvk"]
 
 [ext_resource type="Script" uid="uid://b311gxwakompb" path="res://Main.gd" id="1_glv2v"]
 [ext_resource type="Texture2D" uid="uid://dupw7bm6c73ix" path="res://Sprites/ASUnitCard_Backdrop.png" id="3_fos0i"]
 [ext_resource type="FontFile" uid="uid://dr1ehbyf7j7h" path="res://Fonts/Orbitron/static/Orbitron-Black.ttf" id="4_3dxm6"]
-[ext_resource type="PackedScene" path="res://Units/HORNET/HORNET HNT-181.tscn" id="4_lgr22"]
-[ext_resource type="Script" uid="uid://dx5yv1djxqfym" path="res://unitListButton.gd" id="5_fos0i"]
-[ext_resource type="PackedScene" path="res://Units/PREY/PREY SEEKER PY-SR30.tscn" id="5_trn2v"]
-[ext_resource type="PackedScene" path="res://Units/STINGER/STINGER STG-7S.tscn" id="6_trn2v"]
-[ext_resource type="PackedScene" path="res://Units/WASP/WASP WSP-3W.tscn" id="7_03owx"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -78,36 +73,11 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 ratio = 1.4
 
-[node name="HNT-181" parent="MainContainer/UnitCardContainer" instance=ExtResource("4_lgr22")]
-visible = false
-layout_mode = 2
-
-[node name="PY-SR30" parent="MainContainer/UnitCardContainer" instance=ExtResource("5_trn2v")]
-visible = false
-layout_mode = 2
-
-[node name="STG-7S" parent="MainContainer/UnitCardContainer" instance=ExtResource("6_trn2v")]
-visible = false
-layout_mode = 2
-
-[node name="WSP-3W" parent="MainContainer/UnitCardContainer" instance=ExtResource("7_03owx")]
-visible = false
-layout_mode = 2
-
 [node name="UnitListContainer" type="VBoxContainer" parent="MainContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="unit" type="Button" parent="MainContainer/UnitListContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 120)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("4_3dxm6")
-theme_override_font_sizes/font_size = 24
-text = "Unit"
-script = ExtResource("5_fos0i")
-
+[connection signal="button_down" from="MainContainer/MenuContainer/Search" to="." method="_on_search_button_down"]
 [connection signal="button_down" from="MainContainer/MenuContainer/Quit" to="." method="_on_quit_button_down"]

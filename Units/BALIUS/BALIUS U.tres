@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
 
 [ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
 [ext_resource type="Texture2D" path="res://Sprites/Units/balius-3075.png" id="2_ynkeb"]
@@ -6,13 +6,13 @@
 [resource]
 script = ExtResource("1_cs3jr")
 unitIMG = ExtResource("2_ynkeb")
-callsign = "U"
+variant = "U"
 title = "BALIUS"
 pv = 38
 type = "BM"
 sz = 3
 tmm = 2
-move = 12/10s
+move = "12/10s"
 role = "Sniper"
 skill = 4
 damageS = 1

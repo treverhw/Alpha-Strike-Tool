@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
 
 [ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
 [ext_resource type="Texture2D" path="res://Sprites/Units/hammer-3055u.png" id="2_ynkeb"]
@@ -6,13 +6,13 @@
 [resource]
 script = ExtResource("1_cs3jr")
 unitIMG = ExtResource("2_ynkeb")
-callsign = "HMR-3M"
+variant = "HMR-3M"
 title = "HAMMER"
 pv = 26
 type = "BM"
 sz = 1
 tmm = 2
-move = 10
+move = "10"
 role = "Striker"
 skill = 4
 damageS = 2

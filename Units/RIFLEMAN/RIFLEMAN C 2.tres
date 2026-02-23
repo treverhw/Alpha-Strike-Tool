@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitInfo" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="UnitInfo" format=3]
 
 [ext_resource type="Script" path="res://UnitInfo.gd" id="1_cs3jr"]
 [ext_resource type="Texture2D" path="res://Sprites/Units/rifleman-3085.png" id="2_ynkeb"]
@@ -6,13 +6,13 @@
 [resource]
 script = ExtResource("1_cs3jr")
 unitIMG = ExtResource("2_ynkeb")
-callsign = "2"
-title = "RIFLEMAN C"
+variant = "C 2"
+title = "RIFLEMAN"
 pv = 45
 type = "BM"
 sz = 3
 tmm = 2
-move = 12/18j
+move = "12/18j"
 role = "Skirmisher"
 skill = 4
 damageS = 3

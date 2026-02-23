@@ -3,14 +3,14 @@ class_name UnitInfo
 
 @export var unitIMG : Texture2D
 
-@export var callsign:	String
+@export var variant	:	String
 @export var title	:	String
 @export var pv		:	int
 
 @export var type	:	String
 @export var sz		:	int
 @export var tmm		:	int
-@export var move	:	int
+@export var move	:	String
 @export var role	:	String
 @export var skill	:	int
 

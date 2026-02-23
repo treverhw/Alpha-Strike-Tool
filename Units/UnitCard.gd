@@ -11,7 +11,7 @@ func _ready():
 	
 	get_node(dir + "UnitImgContainer/Unit").texture = stats.unitIMG
 	
-	get_node(dir + "Labels/CALLSIGN").text = stats.callsign
+	get_node(dir + "Labels/VARIANT").text = stats.variant
 	get_node(dir + "Labels/TITLE").text = stats.title
 	get_node(dir + "Labels/PV").text = "PV: " + str(stats.pv)
 	
