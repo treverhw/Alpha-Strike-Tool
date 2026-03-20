@@ -4,7 +4,9 @@ class_name UnitListButton
 var myUnit : Node
 
 func _pressed() -> void:
-	for unit in get_parent().get_parent().get_node("UnitCardContainer").get_children():
+	Global.Main._on_roster_button_down()
+	for unit in Global.Main.unitCards.get_children():
+		print(unit)
 		if unit == myUnit:
 			unit.visible = true
 		else:

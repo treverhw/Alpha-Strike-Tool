@@ -46,14 +46,18 @@ func loadUnits(path: String, text: String, files: Array[String]) -> void:
 func populateList(files: Array[String]) -> void:
 	print("Populating")
 	for path in files:
-		addUnitToList(path)
+		if ".tres" in path or ".tres.remap" in path:
+			var clean_path = path.replace(".remap", "")
+			var unit: Resource = load(clean_path)
+			if is_instance_valid(unit):
+				addUnitToList(unit)
+			else:
+				print("ERROR: " + clean_path + " Contains no unit")
 
-func addUnitToList(file: String) -> void:
-	if ".tres" in file:
-		var unit: Resource = load(file)
-		var idx = UnitList.add_item(unit.title + " " + unit.variant)
-		UnitList.set_item_metadata(idx, unit)
+func addUnitToList(unit: Resource) -> void:
+	var idx = UnitList.add_item(unit.title + " " + unit.variant)
+	UnitList.set_item_metadata(idx, unit)
 
 func _on_unit_list_item_activated(index: int) -> void:
 	var res = UnitList.get_item_metadata(index)
-	get_parent().get_parent().generateUnitCard(res)
+	Global.Main.generateUnitCard(res)

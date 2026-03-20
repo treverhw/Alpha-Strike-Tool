@@ -6,6 +6,7 @@ extends Control
 const unitCard = preload("res://UnitCard.tscn")
 
 func _ready() -> void:
+	Global.Main = self
 	update()
 
 func generateUnitCard(res: Resource) -> void:
