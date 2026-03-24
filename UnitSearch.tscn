@@ -36,6 +36,54 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_a4s6u")
 placeholder_text = "Enter Unit Name..."
 
+[node name="optionBoxes" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BM" type="CheckBox" parent="VBoxContainer/optionBoxes"]
+layout_mode = 2
+button_pressed = true
+text = "BattleMech"
+
+[node name="CV" type="CheckBox" parent="VBoxContainer/optionBoxes"]
+layout_mode = 2
+text = "Combat Vehicle"
+
+[node name="BA" type="CheckBox" parent="VBoxContainer/optionBoxes"]
+layout_mode = 2
+text = "Battle Armor"
+
+[node name="CI" type="CheckBox" parent="VBoxContainer/optionBoxes"]
+layout_mode = 2
+text = "Infantry"
+
+[node name="AF" type="CheckBox" parent="VBoxContainer/optionBoxes"]
+layout_mode = 2
+text = "Aerospace"
+
+[node name="mechOptions" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Assault" type="CheckBox" parent="VBoxContainer/mechOptions"]
+layout_mode = 2
+button_pressed = true
+text = "Assault
+"
+
+[node name="Heavy" type="CheckBox" parent="VBoxContainer/mechOptions"]
+layout_mode = 2
+button_pressed = true
+text = "Heavy"
+
+[node name="Medium" type="CheckBox" parent="VBoxContainer/mechOptions"]
+layout_mode = 2
+button_pressed = true
+text = "Medium"
+
+[node name="Light" type="CheckBox" parent="VBoxContainer/mechOptions"]
+layout_mode = 2
+button_pressed = true
+text = "Light"
+
 [node name="UnitList" type="ItemList" parent="VBoxContainer"]
 custom_minimum_size = Vector2(1050, 719)
 layout_mode = 2
@@ -49,5 +97,15 @@ wait_time = 0.2
 one_shot = true
 
 [connection signal="text_changed" from="VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="VBoxContainer/optionBoxes/BM" to="." method="_on_bm_pressed"]
+[connection signal="pressed" from="VBoxContainer/optionBoxes/CV" to="." method="_on_cv_pressed"]
+[connection signal="pressed" from="VBoxContainer/optionBoxes/BA" to="." method="_on_ba_pressed"]
+[connection signal="pressed" from="VBoxContainer/optionBoxes/CI" to="." method="_on_ci_pressed"]
+[connection signal="pressed" from="VBoxContainer/optionBoxes/AF" to="." method="_on_af_pressed"]
+[connection signal="pressed" from="VBoxContainer/mechOptions/Assault" to="." method="_on_assault_pressed"]
+[connection signal="pressed" from="VBoxContainer/mechOptions/Heavy" to="." method="_on_heavy_pressed"]
+[connection signal="pressed" from="VBoxContainer/mechOptions/Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="VBoxContainer/mechOptions/Light" to="." method="_on_light_pressed"]
 [connection signal="item_activated" from="VBoxContainer/UnitList" to="." method="_on_unit_list_item_activated"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
